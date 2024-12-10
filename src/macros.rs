@@ -5,11 +5,11 @@ macro_rules! day {
             input: String,
         }
 
-        impl InputReciever for $name {}
+        impl advent_of_lib::InputReciever for $name {}
 
         impl $name {
-            pub fn new() -> Result<Self, Error> {
-                use InputReciever;
+            pub fn new() -> Result<Self, advent_of_lib::Error> {
+                use advent_of_lib::InputReciever;
 
                 let input = Self::recieve_input($day, $year)?;
                 Ok(Self { input })
